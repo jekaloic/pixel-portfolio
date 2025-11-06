@@ -13,6 +13,8 @@
         body {
             font-family: 'Pixelify Sans', monospace;
             color: #fff;
+            background: #0a0e27;
+            overflow-x: hidden;
         }
         img {
             image-rendering: pixelated;
@@ -29,22 +31,23 @@
             background-size: cover;
             background-position: top center;
         }
-        #parallax-layer-1 {
-            background-image: url("images/grass.png");
-            z-index: -1;
-        }
-        #parallax-layer-2 {
-            background-image: url("images/cloud2.png");
-            z-index: -2;
-        }
-        #parallax-layer-3 {
-            background-image: url("images/cloud.png");
-            z-index: -3;
-                    }
-        #parallax-layer-4 {
-            background-image: url("images/sky.png");
-            z-index: -4;
-        }
+      /* --- Corrected Parallax Layer CSS --- */
+#parallax-layer-1 {
+    background-image: url("images/sky.png");
+    z-index: -4;
+}
+#parallax-layer-2 {
+    background-image: url("images/cloud.png");
+    z-index: -3;
+}
+#parallax-layer-3 {
+    background-image: url("images/cloud2.png");
+    z-index: -2;
+}
+#parallax-layer-4 {
+    background-image: url("images/grass.png");
+    z-index: -1;
+}
         nav {
             position: fixed;
             top: 0;
@@ -541,13 +544,13 @@ nav a::before {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const layer1 = document.getElementById('parallax-layer-1');
-            layer1.style.transform = `translateY(${scrolled * -0.4}px)`;
+            layer1.style.transform = `translateY(${scrolled * -0.1}px)`;
             const layer2 = document.getElementById('parallax-layer-2');
-            layer2.style.transform = `translateY(${scrolled * -0.75}px)`;
+            layer2.style.transform = `translateY(${scrolled * -0.3}px)`;
             const layer3 = document.getElementById('parallax-layer-3');
-            layer3.style.transform = `translateY(${scrolled * -0.99}px)`;
+            layer3.style.transform = `translateY(${scrolled * -0.5}px)`;
             const layer4 = document.getElementById('parallax-layer-4');
-            layer4.style.transform = `translateY(${scrolled * -0.15}px)`;
+            layer4.style.transform = `translateY(${scrolled * -0.60}px)`;
         });
     </script>
 <div class="lightbox" id="lightbox">
